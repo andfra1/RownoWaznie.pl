@@ -1,0 +1,25 @@
+.canvas {
+  transition: transform 0.3s;
+  transform: translateX(0%);
+  &--off {
+    transform: translateX(-100%);
+  }
+}
+
+.offCanvas {
+  display: none;
+  transition: transform 0.3s;
+  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  z-index: 1;
+  @include mq(650) {
+    display: block;
+    &--on {
+      transform: translateX(0%);
+    }
+  }
+}

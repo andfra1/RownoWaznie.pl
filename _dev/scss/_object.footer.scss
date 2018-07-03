@@ -1,0 +1,51 @@
+.footer {
+  &>.wrapper {
+    border-top: 1px solid $c-dark;
+  }
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    &Items {
+      display: inline-block;
+      width: 100%;
+      min-width: 220px;
+      margin: 15px;
+      flex: 1;
+      h3 {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+      }
+    }
+    &Box {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 25px;
+      &>a:hover {
+        color: #d1d1d1;
+        fill: #d1d1d1;
+      }
+      &:first-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &Side {
+      ul {
+        li {
+          display: inline-block;
+          margin: 15px;
+        }
+      }
+    }
+  }
+}

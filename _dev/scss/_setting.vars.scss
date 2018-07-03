@@ -1,0 +1,33 @@
+//colors
+$c-light: #fff;
+$c-dark: #000;
+$c-dark2: #333;
+$c-warn: rgb(255, 35, 35);
+$c-info: rgb(52, 83, 255);
+$c-neutral: rgb(0, 189, 0);
+$c-basic: #f5f5f5;
+$c-gray: #ccc;
+$c-border: $c-gray;
+$c-gray2: #9c9c9c;
+
+//globals
+//globals - fonts
+$ff-basic: Arial, Helvetica, sans-serif;
+$fs-basic: 1rem;
+$fw-basic: 400;
+$fc-basic: $c-dark2;
+
+$lh-basic: 1.4rem;
+
+//globals - headers
+$fs-h1: $fs-basic*2;
+$fs-h2: $fs-basic*1.5;
+$fs-h3: $fs-basic*1.2;
+
+//globals - sections and wrappers
+$section-margin: 50px 0;
+$section-padding: 0;
+
+$wrapper-width: 1200px;
+$wrapper-margin: 0;
+$wrapper-padding: 0 30px;

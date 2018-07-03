@@ -1,0 +1,137 @@
+.header {
+  position: relative;
+  z-index: 666;
+  background-color: $c-light;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  @include mq(650) {
+    position: fixed;
+    z-index: 2;
+  }
+  & .wrapper {
+    border-bottom: 1px solid $c-border;
+  }
+  &__logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    margin-bottom: 15px;
+    @include mq(650) {
+      height: 60px;
+      justify-content: flex-start;
+    }
+    &-link {
+      font-family: 'Great Vibes', cursive;
+      font-size: 100px;
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      @include mq(650) {
+        font-size: 40px;
+        margin: 0;
+      }
+    }
+  }
+  &__menuOnTop {
+    text-align: left;
+    margin: 10px 0;
+    margin-left: -10px;
+    &-item {
+      display: inline-block;
+      transition: all 0.3s;
+      position: relative;
+      font-family: 'Roboto Condensed', sans-serif;
+      &:hover {
+        color: $c-gray;
+      }
+      &-link {
+        display: flex;
+        height: 100%;
+        padding: 0 10px;
+        text-transform: uppercase;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    @include mq(650) {
+      position: absolute;
+      right: -100%;
+      display: block;
+      z-index: 1;
+      top: 100%;
+      background-color: #fff;
+      transition: right 0.3s;
+      &--show {
+        right: 0;
+        transition: right 0.3s;
+      }
+    }
+    &-item {
+      display: inline-block;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      font-weight: 700;
+      position: relative;
+      color: $c-gray2;
+      margin: 0 5px;
+      font-family: 'Roboto Condensed', sans-serif;
+      @include mq(600) {
+        background-color: #fff;
+        background-color: #fff;
+        display: block;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-top: 0;
+        margin: 0;
+      }
+      &:hover {
+        color: $c-light;
+        background-color: $c-gray2;
+      }
+      &-link {
+        display: flex;
+        position: relative;
+        padding: 0 20px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  &__submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $c-light;
+    border: 1px solid $c-dark;
+    border-top: 0;
+    li {
+      &>a {
+        @include linkAsBlock;
+        padding: 10px 15px;
+        display: block;
+        &:hover {
+          background-color: $c-dark;
+        }
+      }
+    }
+  }
+}
+
+.underHeader {
+  display: none;
+  @include mq(650) {
+    display: block;
+  }
+}

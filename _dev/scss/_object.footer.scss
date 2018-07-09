@@ -37,6 +37,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 0.8rem;
+    @include mq(500) {
+      display: block;
+      &>* {
+        margin: 10px 0;
+        text-align: center;
+      }
+    }
     &Side {
       ul {
         li {

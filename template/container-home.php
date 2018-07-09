@@ -8,12 +8,13 @@ $section = [
   <section class="section home">
     <div class="container">
       <div class="row">
-        <div class="col col-sm-12 col-md-8 col-lg-8">
+        
+      <div class="col col-sm-12 col-md-8">
           <div class="row">
 
             <?php for($i=0; $i<5; $i++) : ?>
 
-            <div class="post col-sm-6 col-md-6 col-lg-6">
+            <div class="post col-sm-6">
               <div class="article">
                 <a href="#" class="article__img">
                   <img src="https://picsum.photos/400/30<?= $i; ?>" alt="x">
@@ -24,7 +25,7 @@ $section = [
                 </div>
                 <div class="article__content">
                   <h2 class="article__content-header">
-                    <a href="#">
+                    <a href="#" class="article__content-header__link">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </a>
                   </h2>
@@ -40,12 +41,12 @@ $section = [
             </div>
 
             <?php endfor; ?>
-            
+
           </div>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4">
+        
           <?php include_once('aside.php')?>
-        </div>
+        
       </div>
     </div>
   </section>

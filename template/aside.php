@@ -1,4 +1,4 @@
-<aside class="aside">
+<aside class="col-sm-12 col-md-4 aside">
     <div class="bio">
       <div class="bio__avatar">
         <img src="./img/avatar.jpg" alt="ja">

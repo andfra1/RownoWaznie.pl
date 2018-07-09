@@ -37,6 +37,9 @@ $icon-facebook2:"\ea91";
 $icon-file-pdf:"\eadf";
 $icon-arrow-left:"\e900";
 $icon-arrow-right:"\e901";
+$icon-long-arrow-alt-left: "\e902";
+$icon-long-arrow-alt-right: "\e903";
+
 
 .icon-search:before {
   content: "\e900";
@@ -80,4 +83,11 @@ $icon-arrow-right:"\e901";
 
 .icon-chevron-right:before {
   content: "\e901";
+}
+
+.icon-long-arrow-alt-left:before {
+  content: "\e902";
+}
+.icon-long-arrow-alt-right:before {
+  content: "\e903";
 }

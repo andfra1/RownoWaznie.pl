@@ -1,11 +1,12 @@
 @import 'setting.reset';
 @import 'setting.fonts';
 @import 'setting.vars';
-@import 'settings.wordpress';
-@import 'settings.icons';
+@import 'setting.wordpress';
 
 @import 'tool.mixins';
 @import 'tool.generic';
+@import 'tool.icons';
+@import 'setting.owl';
 
 @import 'element.burger';
 @import 'element.offCanvas';
@@ -18,7 +19,8 @@
 @import 'object.aside';
 
 @import 'component.buttons';
-
+@import 'component.border';
+@import 'component.slider-articles';
 
 
 

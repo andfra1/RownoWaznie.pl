@@ -1,9 +1,10 @@
 <?php include_once('inc/header.php'); ?>
 
 <div class="offCanvas" id="offCanvas"></div>
-  <header class="header" id="header">
-    <div class="container">
-      <div class="wrapper">
+<header class="header" id="header">
+  <div class="container border-bottom">
+    <div class="row">
+      <div class="col-lg-12">
 
         <ul class="header__menuOnTop" id="menuOnTop">
           <?php foreach ( $header['menuOnTop'] as $key => $val) : ?>
@@ -37,6 +38,7 @@
 
       </div>
     </div>
-  </header>
-  <div class="underHeader" id="underHeader"></div>
-  <div class="canvas" id="canvas">
+  </div>
+</header>
+<div class="underHeader" id="underHeader"></div>
+<div class="canvas" id="canvas">

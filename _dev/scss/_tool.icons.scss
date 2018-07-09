@@ -1,16 +1,15 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./../../font/icons/icomoon.eot?tbrk4a');
-  src:  url('./../../font/icons/icomoon.eot?tbrk4a#iefix') format('embedded-opentype'),
-    url('./../../font/icons/icomoon.ttf?tbrk4a') format('truetype'),
-    url('./../../font/icons/icomoon.woff?tbrk4a') format('woff'),
-    url('./../../font/icons/icomoon.svg?tbrk4a#icomoon') format('svg');
+  src:  url('../../fonts/icons/icomoon.eot');
+  src:  url('../../fonts/icons/icomoon.eot#iefix') format('embedded-opentype'),
+    url('../../fonts/icons/icomoon.ttf') format('truetype'),
+    url('../../fonts/icons/icomoon.woff') format('woff'),
+    url('../../fonts/icons/icomoon.svg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
+@mixin iconize {
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -18,41 +17,67 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-left: 5px;
-  &:before {
-    position: relative;
-    top: 1px;
-  }
 }
+
+[class^="icon-"],
+[class*=" icon-"] {
+@include iconize;  
+}
+
+$icon-search:"\e900";
+$icon-external:"\e901";
+$icon-mail:"\e902";
+$icon-arr-prev:"\e903";
+$icon-arr-next:"\e904";
+$icon-phone:"\e905";
+$icon-cross:"\ea0f";
+$icon-facebook2:"\ea91";
+$icon-file-pdf:"\eadf";
+$icon-arrow-left:"\e900";
+$icon-arrow-right:"\e901";
 
 .icon-search:before {
   content: "\e900";
 }
+
 .icon-external:before {
   content: "\e901";
 }
+
 .icon-ic_mail_black_48px:before {
   content: "\e902";
 }
+
 .icon-ic_navigate_before_black_48px:before {
   content: "\e903";
 }
+
 .icon-ic_navigate_next_black_48px:before {
   content: "\e904";
 }
+
 .icon-ic_phone_black_48px:before {
   content: "\e905";
 }
+
 .icon-cross:before {
   content: "\ea0f";
 }
+
 .icon-facebook2:before {
   content: "\ea91";
 }
+
 .icon-file-pdf:before {
   content: "\eadf";
+}
+
+.icon-chevron-left:before {
+  content: "\e900";
+}
+
+.icon-chevron-right:before {
+  content: "\e901";
 }

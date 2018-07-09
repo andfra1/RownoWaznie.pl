@@ -1,0 +1,32 @@
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  &:before {
+    @include iconize;
+    @include center;
+    position: absolute;
+    font-size: 20px;
+    color: $c-dark;
+  }
+  &:hover {
+    &:before {
+      color: $c-gray2;
+    }
+  }
+}
+
+.owl-prev {
+  left: -10%;
+  &:before {
+    content: $icon-arrow-left;
+  }
+}
+
+.owl-next {
+  right: -10%;
+  &:before {
+    content: $icon-arrow-right;
+  }
+}

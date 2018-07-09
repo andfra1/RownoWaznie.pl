@@ -1,18 +1,18 @@
-.aside {
-  width: 320px;
-  display: inline-block;
-  vertical-align: top;
-  @include mq(880) {
-    width: 100%;
-  }
-}
+// .aside {
+//   width: 320px;
+//   display: inline-block;
+//   vertical-align: top;
+//   @include mq(880) {
+//     width: 100%;
+//   }
+// }
 
-.home .aside {
-  margin-left: 30px;
-  @include mq(880) {
-    margin: 0;
-  }
-}
+// .home .aside {
+//   margin-left: 30px;
+//   @include mq(880) {
+//     margin: 0;
+//   }
+// }
 
 .bio {
   &__avatar {

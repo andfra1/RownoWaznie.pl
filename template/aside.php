@@ -1,5 +1,4 @@
 <aside class="aside">
-  <div class="wrapper">
     <div class="bio">
       <div class="bio__avatar">
         <img src="./img/avatar.jpg" alt="ja">
@@ -11,5 +10,4 @@
         </p>
       </div>
     </div>
-  </div>
 </aside>

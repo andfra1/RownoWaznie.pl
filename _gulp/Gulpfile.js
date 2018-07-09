@@ -21,7 +21,9 @@ var baseName = 'main';
 var path = {
     css: {
         dev: [
-            //'../_dev/scss/vendor/*.css',
+            '!../_dev/scss/vendor/lib/**/*.scss',
+            '!../_dev/scss/vendor/lib/**/*.css',
+            '../_dev/scss/vendor/**/*.scss',
             '../_dev/scss/*.scss'
         ],
         prod: '../prod/css/',

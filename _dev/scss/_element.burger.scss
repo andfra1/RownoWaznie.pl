@@ -9,7 +9,7 @@
   right: 30px;
   background-color: transparent;
   z-index: 3;
-  @include mq(650) {
+  @include mq(767) {
     display: block;
   }
   &__stripe {
@@ -38,6 +38,9 @@
     }
   }
   &--change {
+    &+.header__menu {
+      right: 0;
+    }
     .burger__stripe {
       background-color: transparent;
       &:before {

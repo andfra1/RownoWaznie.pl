@@ -46,12 +46,8 @@ $footer = [
   //   ]
   // ],
   'bottom' => [
-    'left' => 'Copyright all right!',
-    // 'right' => [
-    //   '[fb]' => '#',
-    //   '[twitter]' => '#',
-    //   '[in]' => '#',
-    // ]
+    'left' => 'Copyright 2018 &copy; <a href="./">holistycznie.pl</a>',
+    'right' => 'Projekt i realzacja <a href="http://andfra1.github.io" rel="nofollow" target="_blank">andfra</a>'
   ]
 ];
 ?>

@@ -1,4 +1,4 @@
-$('.home > .container > .wrapper').masonry({
+$('.home .col>.row').masonry({
   // options
   columnWidth: '.post',
   itemSelector: '.post',

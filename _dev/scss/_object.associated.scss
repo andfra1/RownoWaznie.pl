@@ -1,8 +1,13 @@
 .associated {
   .post {
     .article {
-      &__content-header__link {
-        font-size: 1.2rem
+      &__content {
+        &-header__link {
+          font-size: 1.2rem
+        }
+        &-date {
+          font-size: 0.8rem;
+        }
       }
     }
   }

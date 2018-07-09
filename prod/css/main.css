@@ -1430,6 +1430,7 @@ p *
 
 a:not([class])
 {
+    transition: all .3s;
     text-decoration: underline;
 
     -webkit-text-decoration-style: dotted;
@@ -2190,9 +2191,70 @@ a:not([class]):focus
     transform: translate(-50%, -50%);
 }
 
+.slider-articles
+{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.slider-articles .post
+{
+    height: 100%;
+    padding: 0;
+}
+
+.slider-articles .post .article
+{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.slider-articles .post .article__img
+{
+    height: 130px;
+    margin: 0;
+
+    order: 1;
+}
+
+.slider-articles .post .article__content
+{
+    flex: 1 0 auto;
+}
+
+.slider-articles .post .article__content-header
+{
+    display: flex;
+
+    height: 72px;
+    margin-bottom: 10px;
+
+    align-items: center;
+}
+
+.slider-articles .post .article__content-header > *
+{
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+}
+
+.slider-articles .post .article__content-date
+{
+    font-size: .8rem;
+
+    margin: 10px 0;
+}
+
 .associated .post .article__content-header__link
 {
     font-size: 1.2rem;
+}
+
+.associated .post .article__content-date
+{
+    font-size: .8rem;
 }
 
 .prevNextArticle .post h3
@@ -2423,62 +2485,6 @@ a:not([class]):focus
 .border-top
 {
     border-top: 1px solid #ccc;
-}
-
-.slider-articles
-{
-    width: 80%;
-    margin: 0 auto;
-}
-
-.slider-articles .post
-{
-    height: 100%;
-    padding: 0;
-}
-
-.slider-articles .post .article
-{
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-}
-
-.slider-articles .post .article__img
-{
-    height: 130px;
-    margin: 0;
-
-    order: 1;
-}
-
-.slider-articles .post .article__content
-{
-    flex: 1 0 auto;
-}
-
-.slider-articles .post .article__content-header
-{
-    display: flex;
-
-    height: 72px;
-    margin-bottom: 10px;
-
-    align-items: center;
-}
-
-.slider-articles .post .article__content-header > *
-{
-    font-size: 1.1rem;
-    line-height: 1.2rem;
-}
-
-.slider-articles .post .article__content-date
-{
-    font-size: .8rem;
-
-    margin: 10px 0;
 }
 
 @media (min-width: 670px)
@@ -3669,16 +3675,16 @@ a:not([class]):focus
         height: 200px;
     }
 
+    .section.slider
+    {
+        display: none;
+    }
+
     .prevNextArticle .post
     {
         float: none;
 
         width: 100%;
-    }
-
-    .section.slider
-    {
-        display: none;
     }
 }
 

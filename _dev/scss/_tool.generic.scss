@@ -55,6 +55,7 @@ a:not([class]) {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: $c-gray2;
+  transition: all 0.3s;
 }
 a:not([class]):hover, a:not([class]):focus {
   color: $c-gray2;

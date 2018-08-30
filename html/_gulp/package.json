@@ -1,0 +1,29 @@
+{
+    "name": "Default",
+    "version": "1.0.0",
+    "description": "Copytleft",
+    "author": "andfra",
+    "url": "http://andfra1.github.io",
+    "license": "UNLICENSED",
+    "keywords": "gulp",
+    "scripts": {
+        "version": "echo $npm_package_version"
+    },
+    "devDependencies": {
+        "gulp": "*",
+        "browser-sync": "*",
+        "autoprefixer": "*",
+        "gulp-concat": "*",
+        "gulp-csscomb": "*",
+        "gulp-merge-media-queries": "*",
+        "gulp-notify": "*",
+        "gulp-plumber": "*",
+        "gulp-rename": "*",
+        "gulp-sass": "*",
+        "gulp-uglify": "*",
+        "gulp-uncss": "*",
+        "gulp-minify-css": "*",
+        "gulp-wait": "*",
+        "gulp-postcss": "*"
+    }
+}

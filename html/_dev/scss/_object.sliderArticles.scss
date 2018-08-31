@@ -1,0 +1,42 @@
+.section.slider {
+  @include mq(500) {
+    display: none;
+  }
+}
+
+.slider-articles {
+  width: 80%;
+  margin: 0 auto;
+  .post {
+    height: 100%;
+    padding: 0;
+    .article {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      &__img {
+        order: 1;
+        margin: 0;
+        height: 130px;
+      }
+      &__content {
+        flex: 1 0 auto;
+        &-header {
+          display: flex;
+          height: 59px;
+          margin-bottom: 10px;
+          align-items: flex-start;
+          overflow: hidden;
+          &>* {
+            font-size: 1.1rem;
+            line-height: 1.2rem;
+          }
+        }
+        &-date {
+          margin: 10px 0;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

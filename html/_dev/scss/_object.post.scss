@@ -1,73 +1,89 @@
-.post {
-  &__info {
-    color: $c-gray;
-    margin: 30px 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    @include clearfix;
-    &-date {
-      float: left;
-      overflow: hidden;
-    }
-    &-share {
-      float: right;
-      text-transform: uppercase;
-      overflow: hidden;
-      &:before {
-        position: relative;
-        top: 1px;
-        margin-left: 5px;
+.post__content {
+  .post {
+    &__info {
+      color: $c-gray;
+      margin: 30px 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      @include clearfix;
+
+      &-date {
+        float: left;
+        overflow: hidden;
+      }
+
+      &-share {
+        float: right;
+        text-transform: uppercase;
+        overflow: hidden;
+
+        &:before {
+          position: relative;
+          top: 1px;
+          margin-left: 5px;
+        }
       }
     }
-  }
-  & h1 {
-    position: relative;
-    display: block;
-    padding-bottom: 30px;
-    font-size: 3rem;
-    margin-bottom: 30px;
-    @include mq(650) {
-      font-size: 2.2rem;
-    }
-    &:before {
-      content: '';
-      position: absolute;
+
+    & h1 {
+      position: relative;
       display: block;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: $c-border;
+      padding-bottom: 30px;
+      font-size: 3rem;
+      margin-bottom: 30px;
+
+      @include mq(650) {
+        font-size: 2.2rem;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $c-border;
+      }
     }
-  }
-  & p {
-    margin: 15px 0;
-  }
-  & ul {
-    list-style-type: disc;
-    list-style-position: inside;
-    &>* {
-      line-height: $lh-basic;
+
+    & p {
+      margin: 15px 0;
     }
-  }
-  & img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  & figure {
-    display: block;
-    &>*{
+
+    & ul {
+      list-style-type: disc;
+      list-style-position: inside;
+
+      &>* {
+        line-height: $lh-basic;
+      }
+    }
+
+    & img {
       display: block;
-    }
-    &>img {
       max-width: 100%;
-    margin: 0 auto;
+      margin: 0 auto;
     }
-    &>figcaption {
-      text-align: right;
-      margin: 10px;
-      font-size: 0.8rem;
-      color: $c-gray2;
+
+    & figure {
+      display: block;
+
+      &>* {
+        display: block;
+      }
+
+      &>img {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      &>figcaption {
+        text-align: right;
+        margin: 10px;
+        font-size: 0.8rem;
+        color: $c-gray2;
+      }
     }
   }
 }

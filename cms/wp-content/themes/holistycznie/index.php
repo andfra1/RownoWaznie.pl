@@ -17,91 +17,75 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<?php if ( is_home() && ! is_front_page() ) : ?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php single_post_title(); ?>
-		</h1>
-	</header>
-	<?php else : ?>
-	<header class="page-header">
-		<h2 class="page-title">
-			<?php _e( 'Posts', 'twentyseventeen' ); ?>
-		</h2>
-	</header>
-	<?php endif; ?>
+<section class="section home">
+	<div class="container">
+		<div class="row">
+			<div class="col col-sm-12 col-md-6 col-md-offset-1">
 
-	<section class="section home">
-		<div class="container">
-			<div class="col col-sm-12 col-md-8">
-				<div class="row">
-
-					<?php
+				<?php
 			if ( have_posts() ) :
-
-				/* Start the Loop */
 				while ( have_posts() ) : the_post();
+				// $category_detail=get_the_category($post->ID);
+				// foreach($category_detail as $cd) :
+				// if($cd->slug === $_GET['show']) :
 					?>
 
-					<div class="post col-sm-12">
-						<div class="article">
-							<a href="<?= get_permalink(); ?>" class="article__img">
-								<?= the_post_thumbnail('thumbnail', array('class' => 'lazy')); ?>
-								<span class="lazy__placeholder"></span>
-							</a>
-							<div class="article__category">
-
-								<?php $category_detail=get_the_category($post->ID);
+				<div class="post col-lg-12">
+					<div class="article">
+						<div class="article__category">
+							<?php $category_detail=get_the_category($post->ID);
 									foreach($category_detail as $cd) :?>
-								<span>
-									<?= $cd->cat_name; ?>
-								</span>
-								<?php endforeach; ?>
-							</div>
-							<div class="article__content">
-								<h2 class="article__content-header">
-									<a href="<?= get_permalink(); ?>" class="article__content-header__link">
-										<?php the_title();?>
-									</a>
-								</h2>
-								<author>
-									<?= get_author_name(); ?>
-								</author>
-								<time datetime="2018-06-28 20:00" class="article__content-date">
-									<?= get_the_date(); ?>
-								</time>
-								<div class="article__content-intro">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam alias expedita saepe nobis consequatur fugit
-									est repellat
-									corporis dolorum aliquid, magnam earum cupiditate dolor, quibusdam ut voluptas nulla. Quam, necessitatibus!
-								</div>
+							<span>
+								<?= $cd->cat_name; ?>
+							</span>
+							<?php endforeach; ?>
+						</div>
+						<h2 class="article__header">
+							<a href="<?= get_permalink(); ?>" class="article__header__link" title="<?php the_title();?>">
+								<?php the_title();?>
+							</a>
+						</h2>
+						<div class="article__box">
+							<author class="article__author">
+								<?= get_author_name(); ?>
+							</author>
+							<time datetime="<?= get_the_date(); ?>" class="article__date">
+								<?= get_the_date(); ?>
+							</time>
+							<div class="article__comments">
+								<?= get_comments_number($post->ID); ?>
 							</div>
 						</div>
+						<a href="<?= get_permalink(); ?>" class="article__img" title="<?php the_title();?>">
+							<?= the_post_thumbnail('full', array('class' => 'lazy')); ?>
+							<span class="lazy__placeholder"></span>
+						</a>
+						<div class="article__intro">
+						<?php the_excerpt(); ?>
+						</div>
+						<div class="article__readmore">
+							<a href="<?= get_permalink(); ?>" title="<?php the_title();?>" class="article__header__link">
+								<span>Czytaj więcej...</span>
+								<span>Czytaj więcej...</span>
+							</a>
+						</div>
 					</div>
+				</div>
 
 
-
-					<?php
+				<?php
+				// 	endif;
+				// endforeach;
 				endwhile;
-
-				the_posts_pagination( array(
-					'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-				) );
-
-			else :
-
+					else :
 				get_template_part( 'template-parts/post/content', 'none' );
-
 			endif;
 			?>
-
-				</div>
 			</div>
+			<?php get_template_part( 'view/aside', '' );?>
 		</div>
-	</section>
+	</div>
+</section>
 
 
-	<?php get_footer();
+<?php get_footer();

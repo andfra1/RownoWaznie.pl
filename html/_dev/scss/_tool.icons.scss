@@ -26,68 +26,77 @@
 @include iconize;  
 }
 
-$icon-search:"\e900";
-$icon-external:"\e901";
-$icon-mail:"\e902";
-$icon-arr-prev:"\e903";
-$icon-arr-next:"\e904";
-$icon-phone:"\e905";
-$icon-cross:"\ea0f";
+$icon-search:"\f002";
+$icon-heart:"\f004";
+$icon-user:"\f007";
+$icon-chevron-left:"\f053";
+$icon-chevron-right:"\f054";
+$icon-eye:"\f06e";
+$icon-calendar:"\f073";
+$icon-hand-o-right:"\f0a4";
+$icon-group:"\f0c0";
+$icon-users:"\f0c0";
+$icon-comments-o:"\f0e6";
+$icon-coffee:"\f0f4";
+$icon-calendar-o:"\f133";
+$icon-long-arrow-left:"\f177";
+$icon-long-arrow-right:"\f178";
+$icon-wink:"\e9e7";
+$icon-google-plus2:"\ea8c";
 $icon-facebook2:"\ea91";
-$icon-file-pdf:"\eadf";
-$icon-arrow-left:"\e900";
-$icon-arrow-right:"\e901";
-$icon-long-arrow-alt-left: "\e902";
-$icon-long-arrow-alt-right: "\e903";
 
 
 .icon-search:before {
-  content: "\e900";
+  content: "\f002";
 }
-
-.icon-external:before {
-  content: "\e901";
+.icon-heart:before {
+  content: "\f004";
 }
-
-.icon-ic_mail_black_48px:before {
-  content: "\e902";
+.icon-user:before {
+  content: "\f007";
 }
-
-.icon-ic_navigate_before_black_48px:before {
-  content: "\e903";
+.icon-chevron-left:before {
+  content: "\f053";
 }
-
-.icon-ic_navigate_next_black_48px:before {
-  content: "\e904";
+.icon-chevron-right:before {
+  content: "\f054";
 }
-
-.icon-ic_phone_black_48px:before {
-  content: "\e905";
+.icon-eye:before {
+  content: "\f06e";
 }
-
-.icon-cross:before {
-  content: "\ea0f";
+.icon-calendar:before {
+  content: "\f073";
 }
-
+.icon-hand-o-right:before {
+  content: "\f0a4";
+}
+.icon-group:before {
+  content: "\f0c0";
+}
+.icon-users:before {
+  content: "\f0c0";
+}
+.icon-comments-o:before {
+  content: "\f0e6";
+}
+.icon-coffee:before {
+  content: "\f0f4";
+}
+.icon-calendar-o:before {
+  content: "\f133";
+}
+.icon-long-arrow-left:before {
+  content: "\f177";
+}
+.icon-long-arrow-right:before {
+  content: "\f178";
+}
+.icon-wink:before {
+  content: "\e9e7";
+}
+.icon-google-plus2:before {
+  content: "\ea8c";
+}
 .icon-facebook2:before {
   content: "\ea91";
-}
-
-.icon-file-pdf:before {
-  content: "\eadf";
-}
-
-.icon-chevron-left:before {
-  content: "\e900";
-}
-
-.icon-chevron-right:before {
-  content: "\e901";
-}
-
-.icon-long-arrow-alt-left:before {
-  content: "\e902";
-}
-.icon-long-arrow-alt-right:before {
-  content: "\e903";
 }

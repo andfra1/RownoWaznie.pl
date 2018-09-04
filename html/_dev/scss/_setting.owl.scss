@@ -20,13 +20,13 @@
 .owl-prev {
   left: -10%;
   &:before {
-    content: $icon-arrow-left;
+    content: $icon-chevron-left;
   }
 }
 
 .owl-next {
   right: -10%;
   &:before {
-    content: $icon-arrow-right;
+    content: $icon-chevron-right;
   }
 }

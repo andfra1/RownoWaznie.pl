@@ -10,30 +10,23 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Social Media',
-			'menu_title'	=> 'Social Media',
-			'menu_slug' 	=> $manage_slug . '-social-media',
+			'page_title' 	=> 'O mnie',
+			'menu_title'	=> 'O mnie',
+			'menu_slug' 	=> $manage_slug . '-omnie',
 			'parent_slug' => $manage_slug
 		));
 
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Dane kontaktowe firmy',
-			'menu_title'	=> 'Dane kontaktowe',
-			'menu_slug' 	=> $manage_slug . '-dane-kontaktowe',
+			'page_title' 	=> 'Google Analitycs',
+			'menu_title'	=> 'Google Analitycs',
+			'menu_slug' 	=> $manage_slug . '-ga',
 			'parent_slug' => $manage_slug
 		));
-		
+
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Polecają nas',
-			'menu_title'	=> 'Polecają nas',
-			'menu_slug' 	=> $manage_slug . '-polecaja-nas',
-			'parent_slug' => $manage_slug
-		));
-	
-		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Rekomendacje',
-			'menu_title'	=> 'Rekomendacje',
-			'menu_slug' 	=> $manage_slug . '-rekomendacje',
+			'page_title' 	=> 'Share',
+			'menu_title'	=> 'Share',
+			'menu_slug' 	=> $manage_slug . '-share',
 			'parent_slug' => $manage_slug
 		));
 }

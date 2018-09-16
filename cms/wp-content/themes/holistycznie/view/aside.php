@@ -1,5 +1,5 @@
 <!-- <aside class="col-sm-12 col-md-3 col-md-offset-1 aside"> -->
-  <div class="aside">
+  <aside class="aside">
     <div class="bio">
       <div class="bio__avatar">
       <img src="<?= get_field('omnie-zdjecie', 'option')['url']; ?>" alt="<?= get_field('omnie-zdjecie', 'option')['alt']; ?>">

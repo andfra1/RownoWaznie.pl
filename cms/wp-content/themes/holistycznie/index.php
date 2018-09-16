@@ -21,7 +21,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<!-- <div class="col col-sm-12 col-md-8"> -->
-<div class="content">
+			<div class="content">
 				<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
@@ -43,10 +43,10 @@ get_header(); ?>
 							</a>
 						</h2>
 						<div class="article__box">
-							<author class="article__author">
+							<span class="article__author">
 								<?= get_author_name(); ?>
-							</author>
-							<time datetime="<?= get_the_date(); ?>" class="article__date">
+							</span>
+							<time datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
 								<?= get_the_date(); ?>
 							</time>
 							<div class="article__comments">
@@ -58,7 +58,7 @@ get_header(); ?>
 							<span class="lazy__placeholder"></span>
 						</a>
 						<div class="article__intro">
-						<?php the_excerpt(); ?>
+							<?php the_excerpt(); ?>
 						</div>
 						<div class="article__readmore">
 							<a href="<?= get_permalink(); ?>" title="<?php the_title();?>" class="article__header__link">
@@ -69,10 +69,7 @@ get_header(); ?>
 					</div>
 				</div>
 
-
 				<?php
-				// 	endif;
-				// endforeach;
 				endwhile;
 					else :
 				get_template_part( 'template-parts/post/content', 'none' );

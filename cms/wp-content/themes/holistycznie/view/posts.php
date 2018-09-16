@@ -31,10 +31,10 @@ get_header(); ?>
 							</a>
 						</h2>
 						<div class="article__box">
-							<author class="article__author">
+							<span class="article__author">
 								<?= get_author_name(); ?>
-							</author>
-							<time datetime="<?= get_the_date(); ?>" class="article__date">
+							</s>
+							<time datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
 								<?= get_the_date(); ?>
 							</time>
 							<div class="article__comments">
@@ -57,10 +57,7 @@ get_header(); ?>
 					</div>
 				</div>
 
-
 				<?php
-				// 	endif;
-				// endforeach;
 				endwhile;
 					else :
 				get_template_part( 'template-parts/post/content', 'none' );

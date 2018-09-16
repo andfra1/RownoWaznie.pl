@@ -21,7 +21,7 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
       'container_class' => '',
       'container_id'    => '',
       'menu_class'      => 'header__menu',
-      'menu_id'         => 'menu__main header__menu',
+      'menu_id'         => 'header__menu',
       'echo'            => true,
       'fallback_cb'     => 'wp_page_menu',
       'before'          => '',

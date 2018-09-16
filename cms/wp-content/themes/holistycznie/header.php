@@ -33,7 +33,7 @@ $header = [
         </div>
 
         <button class="burger" id="burger" value="off">
-          <div class="burger__stripe"></div>
+          <span class="burger__stripe"></span>
         </button>
 
           <?php get_main_menu( $mainmenu ); ?>

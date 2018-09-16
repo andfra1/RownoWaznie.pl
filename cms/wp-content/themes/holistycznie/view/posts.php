@@ -8,7 +8,7 @@ get_header(); ?>
 <section class="section home">
 	<div class="container">
 		<div class="row">
-			<div class="col col-sm-12 col-md-6 col-md-offset-1">
+			<div class="col col-sm-12 col-md-8">
 
 				<?php
 			if ( have_posts() ) :
@@ -46,9 +46,7 @@ get_header(); ?>
 							<span class="lazy__placeholder"></span>
 						</a>
 						<div class="article__intro">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam alias expedita saepe nobis consequatur fugit
-							est repellat
-							corporis dolorum aliquid, magnam earum cupiditate dolor, quibusdam ut voluptas nulla. Quam, necessitatibus!
+						<?php the_excerpt(); ?>
 						</div>
 						<div class="article__readmore">
 							<a href="<?= get_permalink(); ?>" title="<?php the_title();?>" class="article__header__link">

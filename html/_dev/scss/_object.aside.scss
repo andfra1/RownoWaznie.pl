@@ -1,32 +1,46 @@
-.aside:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #ccc;
-  left: -38px;
-  @include mq(991) {
-    content: none;
+.aside {
+  border-left: 1px solid $c-gray;
+  float: right;
+  border-top: 0;
+  position: relative;
+  max-width: 300px;
+  // &:before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   width: 1px;
+  //   height: 100%;
+  //   background-color: $c-gray;
+  //   top: 0;
+  //   left: -32px;
+  // }
+  &>* {
+    padding: 15px;
+    margin: 15px;
   }
+  @include mq(991) {
+        border-left: 0;
+        border-top: 1px solid $c-gray;
+        //margin: 15px;
+        padding: 15px;
+        max-width: none;
+      }
 }
 
 .bio {
   text-align: center;
-  padding-bottom: 30px;
   &__avatar {
     position: relative;
     //border-radius: 50%;
     width: 200px;
     height: 200px;
-    margin: 40px auto;
+    margin: 0px auto;
     overflow: hidden;
-    @include mq(880) {
+    @include mq(991) {
       width: 300px;
       height: 300px;
     }
-    @include mq(500) {
+    @include mq(576) {
       width: 200px;
       height: 200px;
     }

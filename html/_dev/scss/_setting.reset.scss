@@ -34,9 +34,8 @@ time {
   position: relative;
 }
 
-ul {
-  list-style: none;
-  position: relative;
+ul, ol {
+  list-style-position: inside;
 }
 
 ul li a {

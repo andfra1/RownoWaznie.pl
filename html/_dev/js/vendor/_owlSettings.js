@@ -1,8 +1,8 @@
-let owlSettings = {
+var owlSettings = {
   center: false,
   items: 2,
   loop: true,
-  margin: 30,
+  margin: 20,
   autoplay: true,
   autoplayTimeout: 3000,
   autoplayHoverPause: false,
@@ -20,7 +20,7 @@ let owlSettings = {
       items: 4
     }
   }
-}
+};
 
 $('#slider-articles').owlCarousel(owlSettings);
 

@@ -16,8 +16,8 @@ get_header(); ?>
 <section class="section home">
 	<div class="container">
 		<div class="row">
-			<div class="col col-sm-12 col-md-6 col-md-offset-1">
-
+			<div class="col col-sm-12 col-md-8">
+			<div class="content">
 		<?php
 		if ( have_posts() ) : ?>
 			<?php
@@ -72,6 +72,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/post/content', 'none' );
 		endif;
 		?>
+		</div>
 		</div>
 		<?php get_template_part( 'view/aside', '' );?>
 	</div>

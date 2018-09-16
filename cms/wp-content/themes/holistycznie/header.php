@@ -24,19 +24,11 @@ $header = [
     <div class="row">
       <div class="col-lg-12">
 
-        <ul class="header__menuOnTop" id="menuOnTop">
-          <?php foreach ( $header['menuOnTop'] as $key => $val) : ?>
-          <li class="header__menuOnTop-item">
-            <a href="<?= $val; ?>" class="header__menuOnTop-item-link">
-              <?= $key; ?>
-            </a>
-          </li>
-          <?php endforeach; ?>
-        </ul>
+        <?php get_top_menu( $topmenu ); ?>
 
         <div class="header__logo">
           <a class="header__logo-link" href="<?= get_home_url(); ?>">
-            Holistycznie.pl
+            <?php bloginfo( 'name' ); ?>
           </a>
         </div>
 
@@ -44,8 +36,8 @@ $header = [
           <div class="burger__stripe"></div>
         </button>
 
-					<?= get_nav_menu('top'); ?>
-
+          <?php get_main_menu( $mainmenu ); ?>
+          
       </div>
     </div>
   </div>

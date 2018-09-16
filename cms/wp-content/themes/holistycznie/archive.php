@@ -12,50 +12,72 @@
 
 get_header(); ?>
 
-<div class="wrap">
 
-	<?php if ( have_posts() ) : ?>
-		<header class="page-header">
-			<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+<section class="section home">
+	<div class="container">
+		<div class="row">
+			<div class="col col-sm-12 col-md-8">
+
+				<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) : the_post();
+					?>
+
+				<div class="post col-lg-12">
+					<div class="article">
+						<div class="article__category">
+							<?php $category_detail=get_the_category($post->ID);
+									foreach($category_detail as $cd) :?>
+							<span>
+								<?= $cd->cat_name; ?>
+							</span>
+							<?php endforeach; ?>
+						</div>
+						<h2 class="article__header">
+							<a href="<?= get_permalink(); ?>" class="article__header__link" title="<?php the_title();?>">
+								<?php the_title();?>
+							</a>
+						</h2>
+						<div class="article__box">
+							<author class="article__author">
+								<?= get_author_name(); ?>
+							</author>
+							<time datetime="<?= get_the_date(); ?>" class="article__date">
+								<?= get_the_date(); ?>
+							</time>
+							<div class="article__comments">
+								<?= get_comments_number($post->ID); ?>
+							</div>
+						</div>
+						<a href="<?= get_permalink(); ?>" class="article__img" title="<?php the_title();?>">
+							<?= the_post_thumbnail('full', array('class' => 'lazy')); ?>
+							<span class="lazy__placeholder"></span>
+						</a>
+						<div class="article__intro">
+						<?php the_excerpt(); ?>
+						</div>
+						<div class="article__readmore">
+							<a href="<?= get_permalink(); ?>" title="<?php the_title();?>" class="article__header__link">
+								<span>Czytaj więcej...</span>
+								<span>Czytaj więcej...</span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+				<?php
+				// 	endif;
+				// endforeach;
+				endwhile;
+					else :
+				get_template_part( 'template-parts/post/content', 'none' );
+			endif;
 			?>
-		</header><!-- .page-header -->
-	<?php endif; ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-archivum.php
-		<?php
-		if ( have_posts() ) : ?>
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_pagination( array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-			) );
-
-		else :
-
-			get_template_part( 'template-parts/post/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+			</div>
+			<?php get_template_part( 'view/aside'); ?>
+		</div>
+	</div>
+</section>
 
 <?php get_footer();

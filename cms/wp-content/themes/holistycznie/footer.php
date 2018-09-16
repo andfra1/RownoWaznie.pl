@@ -18,7 +18,7 @@
 $footer = [
   'bottom' => [
     'left' => 'Copyright 2018 &copy; <a href="./">holistycznie.pl</a>',
-    'right' => 'Projekt i realzacja <a href="http://andfra1.github.io" rel="nofollow" target="_blank">andfra</a>'
+    'right' => 'Projekt i realzacja <a href="http://andfra1.github.io" rel="noreferrer" target="_blank">andfra</a>'
   ]
 ];
 ?>

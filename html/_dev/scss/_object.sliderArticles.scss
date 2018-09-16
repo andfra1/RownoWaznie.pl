@@ -23,7 +23,7 @@
         flex: 1 0 auto;
         &-header {
           display: flex;
-          height: 59px;
+          height: 57px;
           margin-bottom: 10px;
           align-items: flex-start;
           overflow: hidden;
@@ -35,6 +35,7 @@
         &-date {
           margin: 10px 0;
           font-size: 0.8rem;
+          color: $c-gray2;
         }
       }
     }

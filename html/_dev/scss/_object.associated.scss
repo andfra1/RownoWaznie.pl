@@ -1,13 +1,31 @@
 .associated {
   .post {
+    border: 0;
+
     .article {
-      &__content {
-        &-header__link {
-          font-size: 1.2rem
+      &__img {
+        margin-top: 0;
+      }
+
+      &__content {}
+
+      &__header {
+        font-size: 1.1rem;
+      }
+
+      &__header__link {
+        font-size: 1.2rem;
+      }
+
+      &__category {
+        span {
+          font-size: 0.9rem;
         }
-        &-date {
-          font-size: 0.8rem;
-        }
+      }
+      &-date {
+        font-size: 0.8rem;
+        margin: 10px 0;
+        color: $c-gray2;
       }
     }
   }

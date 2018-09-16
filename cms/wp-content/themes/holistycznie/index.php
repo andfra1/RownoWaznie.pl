@@ -20,17 +20,14 @@ get_header(); ?>
 <section class="section home">
 	<div class="container">
 		<div class="row">
-			<div class="col col-sm-12 col-md-6 col-md-offset-1">
-
+			<!-- <div class="col col-sm-12 col-md-8"> -->
+<div class="content">
 				<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
-				// $category_detail=get_the_category($post->ID);
-				// foreach($category_detail as $cd) :
-				// if($cd->slug === $_GET['show']) :
 					?>
 
-				<div class="post col-lg-12">
+				<div class="post post__main col-lg-12">
 					<div class="article">
 						<div class="article__category">
 							<?php $category_detail=get_the_category($post->ID);
@@ -82,6 +79,7 @@ get_header(); ?>
 			endif;
 			?>
 			</div>
+			<!-- </div> -->
 			<?php get_template_part( 'view/aside', '' );?>
 		</div>
 	</div>

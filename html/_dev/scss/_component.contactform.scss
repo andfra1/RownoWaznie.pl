@@ -1,0 +1,66 @@
+.wpcf7 {
+  max-width: 500px;
+  margin: 0 auto !important;
+  padding: 30px 0 !important;
+
+  .contact {
+    p,
+    p * {
+      //font-family: 'Roboto Condensed'
+    }
+
+    p {
+      &:last-of-type {
+        text-align: center;
+      }
+    }
+
+    input, textarea {
+      display: block;
+      margin: 5px 0;
+      padding: 7px 10px;
+      font-size: 16px;
+      background-color: $c-basic;
+      border: 1px solid transparent;
+      transition: background-color 0.3s, border 0.3s;
+      &:focus {
+        border-bottom: 1px solid $c-gray;
+        background-color: $c-white;
+      }
+      &.wpcf7-not-valid {
+        border: 1px solid $c-warn;
+      }
+    }
+    input[type="submit"] {
+      display: inline-block;
+      margin: 0 auto;
+      background-color: $c-basic;
+      border: 1px solid transparent;
+      width: 250px;
+      margin-left: 16px;
+      &:hover {
+        border: 1px solid $c-gray;
+        background-color: $c-white;
+      }
+    }
+  }
+
+.wpcf7-not-valid-tip {
+  display: none;
+  font-size: 12px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+.wpcf7-recaptcha {
+  width: 207px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 74px;
+  &> * {
+    top: -1px;
+    position: relative;
+    left: -1px;
+}}}

@@ -17,10 +17,12 @@ h3,
   font-weight: $fw-basic;
   color: $c-dark2;
   margin: 30px 0;
+  line-height: 1.2;
 }
 
 h1 {
   font-size: $fs-h1;
+
   @include mq(650) {
     font-size: $fs-h1+(-0.2rem);
   }
@@ -28,6 +30,7 @@ h1 {
 
 h2 {
   font-size: $fs-h2;
+
   @include mq(650) {
     font-size: $fs-h2+(-0.2rem);
   }
@@ -35,16 +38,19 @@ h2 {
 
 h3 {
   font-size: $fs-h3;
+
   @include mq(650) {
     font-size: $fs-h3+(-0.2rem);
   }
 }
 
-p, ul, ol,
+p,
+ul,
+ol,
 p * {
   font-size: $fs-basic;
   line-height: $lh-basic;
-  font-family: 'Lora',serif;
+  font-family: 'Lora', serif;
   color: $c-dark2;
   width: 100%;
   margin: 15px 0;
@@ -57,7 +63,9 @@ a:not([class]) {
   text-decoration-color: $c-gray2;
   transition: all 0.3s;
 }
-a:not([class]):hover, a:not([class]):focus {
+
+a:not([class]):hover,
+a:not([class]):focus {
   color: $c-gray2;
   text-decoration: none;
 }
@@ -78,8 +86,13 @@ a:not([class]):hover, a:not([class]):focus {
 
 .content {
   //padding: 0 15px;
-  max-width: 600px;
+  max-width: 650px;
   float: left;
+
+  @include mq(1200) {
+    max-width: 600px;
+  }
+
   @include mq(991) {
     max-width: none;
     padding: 15px;
@@ -87,5 +100,8 @@ a:not([class]):hover, a:not([class]):focus {
 }
 
 .container {
-  max-width: 970px;
+  max-width: 1030px;
+  @include mq(1200) {
+    max-width: 970px;
+  }
 }

@@ -204,6 +204,7 @@
 
 .underHeader {
   display: none;
+  height: 120px;
 
   @include mq(767) {
     display: block;

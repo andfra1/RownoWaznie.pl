@@ -14,8 +14,8 @@
  * @since 1.0
  * @version 1.0
  */
-
-get_header(); ?>
+get_header(); 
+?>
 
 <section class="section home">
 	<div class="container">
@@ -32,9 +32,9 @@ get_header(); ?>
 						<div class="article__category">
 							<?php $category_detail=get_the_category($post->ID);
 									foreach($category_detail as $cd) :?>
-							<span>
+							<a href="<?= get_category_link($cd->cat_ID);?>">
 								<?= $cd->cat_name; ?>
-							</span>
+							</a>
 							<?php endforeach; ?>
 						</div>
 						<h2 class="article__header">
@@ -49,9 +49,9 @@ get_header(); ?>
 							<time datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
 								<?= get_the_date(); ?>
 							</time>
-							<div class="article__comments">
+							<a href="<?= get_permalink(); ?>#comments" class="article__comments">
 								<?= get_comments_number($post->ID); ?>
-							</div>
+							</a>
 						</div>
 						<a href="<?= get_permalink(); ?>" class="article__img" title="<?php the_title();?>">
 							<?= the_post_thumbnail('full', array('class' => 'lazy')); ?>

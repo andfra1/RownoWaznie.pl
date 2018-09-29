@@ -107,9 +107,9 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 										<div class="article__category">
 											<?php $category_detail=get_the_category($post->ID);
 									foreach($category_detail as $cd) :?>
-											<span>
+											<a href="<?= get_category_link($cd->cat_ID);?>">
 												<?= $cd->cat_name; ?>
-											</span>
+											</a>
 											<?php endforeach; ?>
 										</div>
 									</div>
@@ -159,7 +159,7 @@ wp_reset_postdata();
 								<h3>Następny artykuł</h3>
 								<?php
 								$nextpost = get_adjacent_post( false, '', false, 'category' );
-								$image = get_the_post_thumbnail( $nextpost );
+								$image = get_the_post_thumbnail( $nextpost, 'thumbnail' );
 								$name = get_the_title( $nextpost );
 								$url = get_permalink( $nextpost );
 							?>
@@ -176,7 +176,7 @@ wp_reset_postdata();
 							</div>
 						</div>
 					</section>
-					<section class="comments">
+					<section class="comments" id="comments">
 						<?php comments_template() ?>
 
 					</section>

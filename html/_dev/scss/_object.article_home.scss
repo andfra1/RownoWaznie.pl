@@ -40,12 +40,13 @@
       font-size: 0;
       text-align: center;
 
-      &>span {
+      &>* {
         display: inline-block;
         color: $c-gray2;
         font-size: 1rem;
         font-family: $roboto;
         margin: 0 4px;
+        text-decoration: none;
       }
     }
 
@@ -89,7 +90,7 @@
         @include iconize;
       }
     }
-
+    //ikonki przy postach na glownej stronie
     &__date:before {
       content: $icon-calendar;
     }

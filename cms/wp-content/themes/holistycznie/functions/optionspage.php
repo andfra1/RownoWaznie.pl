@@ -17,6 +17,13 @@ if( function_exists('acf_add_options_page') ) {
 		));
 
 		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Panel boczny',
+			'menu_title'	=> 'Panel boczny',
+			'menu_slug' 	=> $manage_slug . '-Panel boczny',
+			'parent_slug' => $manage_slug
+		));
+
+		acf_add_options_sub_page(array(
 			'page_title' 	=> 'Google Analitycs',
 			'menu_title'	=> 'Google Analitycs',
 			'menu_slug' 	=> $manage_slug . '-ga',

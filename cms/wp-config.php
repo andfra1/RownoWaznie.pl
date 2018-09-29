@@ -83,6 +83,8 @@ $table_prefix  = 'hol_';
 define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
+define( 'WP_SITEURL', 'http://localhost/__blog-Justyna/cms/' );  
+define( 'WP_HOME',    'http://localhost/__blog-Justyna/cms/' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

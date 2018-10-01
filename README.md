@@ -9,7 +9,7 @@ Specyfikacja:
 - ACF w panelu bocznym (o mnie, archiwum, wybrane posty)
 - wtyczki wymagane: ACF, Contact Form 7, wpDiscuz
 
-#### ver 1.1.1
+### ver 1.1.1
 ##### dodano:
 - szukajkę
 - customowy select (lista z archiwum)
@@ -22,7 +22,7 @@ Specyfikacja:
 - posty, archiwum i kategorie - zrobić wspólny template
 - polityka prywatności
 
-#### ver 1.1
+### ver 1.1
 ##### dodano:
 - panel boczny - możliwość dodania wybranych postów do panelu bocznego
 - możliwość włączenia/wyłączenia wyświetlania listy rozwijanej archiwum
@@ -39,5 +39,5 @@ Specyfikacja:
 - posty, archiwum i kategorie - zrobić wspólny template
 - polityka prywatności
 
-#### ver 1.0
+### ver 1.0
 - gotowy szablon na produkcję

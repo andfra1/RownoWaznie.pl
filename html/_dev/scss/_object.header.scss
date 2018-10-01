@@ -10,13 +10,71 @@
     z-index: 2;
   }
 
+  &__top {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    .search-form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      label {
+        display: none;
+      }
+      input {
+        padding: 3px 5px;
+        width: 200px;
+        height: 100%;
+        display: block;
+        border: 1px solid $c-gray;
+        margin-right: 5px;
+        font-size: 12px;
+        @include mq(500) {
+          width: 140px;
+        }
+      }
+      button {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .header__menuOnTop {
+      text-align: left;
+      margin: 0;
+      li {
+        display: inline-block;
+        transition: all 0.3s;
+        position: relative;
+        font-family: 'Roboto Condensed', sans-serif;
+  
+        &:hover {
+          color: $c-gray;
+        }
+  
+        &:first-child>* {
+          padding-left: 0;
+        }
+  
+        a {
+          display: flex;
+          height: 100%;
+          padding: 0 10px;
+          text-transform: uppercase;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
   &__logo {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 140px;
-    margin-bottom: 15px;
+    margin: 15px;
 
     @include mq(767) {
       height: 60px;
@@ -29,40 +87,11 @@
       position: relative;
       display: inline-block;
       margin: 0 auto;
+      color: $c-dark !important;
 
       @include mq(767) {
         font-size: 40px;
         margin: 0;
-      }
-    }
-  }
-
-  &__menuOnTop {
-    text-align: left;
-    margin: 10px 0;
-
-    li {
-      display: inline-block;
-      transition: all 0.3s;
-      position: relative;
-      font-family: 'Roboto Condensed', sans-serif;
-
-      &:hover {
-        color: $c-gray;
-      }
-
-      &:first-child>* {
-        padding-left: 0;
-      }
-
-      a {
-        display: flex;
-        height: 100%;
-        padding: 0 10px;
-        text-transform: uppercase;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
       }
     }
   }
@@ -117,7 +146,7 @@
       @include mq(767) {
         display: block;
         margin: 0;
-        height: 20%;
+        height: 15%;
         min-height: 50px;
 
         &:hover {
@@ -138,10 +167,10 @@
         }
 
         a {
-          color: inherit;
+          color: $c-dark;
 
           &:before {
-            transform: translateY(100%);
+            transform: translateY(200%);
           }
         }
       }
@@ -165,8 +194,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 100%;
-          height: 100%;
           color: $c-dark;
           transition: 0.5s;
         }
@@ -204,7 +231,7 @@
 
 .underHeader {
   display: none;
-  height: 120px;
+  height: 125px;
 
   @include mq(767) {
     display: block;

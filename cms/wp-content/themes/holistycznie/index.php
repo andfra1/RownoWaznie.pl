@@ -20,7 +20,7 @@ get_header();
 <section class="section home">
 	<div class="container">
 		<div class="row">
-			<!-- <div class="col col-sm-12 col-md-8"> -->
+		<div class="col col-sm-12 col-md-8">
 			<div class="content">
 				<?php
 			if ( have_posts() ) :
@@ -76,9 +76,10 @@ get_header();
 			endif;
 			?>
 			</div>
-			<!-- </div> -->
+			</div>
 			<?php get_template_part( 'view/aside', '' );?>
 		</div>
+		
 	</div>
 </section>
 

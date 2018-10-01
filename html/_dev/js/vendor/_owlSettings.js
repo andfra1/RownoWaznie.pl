@@ -24,7 +24,7 @@ var owlSettings = {
 
 $('#slider-articles').owlCarousel(owlSettings);
 
-$(window).on('resize', () => {
+$(window).on('resize', function() {
   if (window.innerWidth <= 500) {
     $('#slider-articles').trigger('remove.owl.carousel')
   } else {

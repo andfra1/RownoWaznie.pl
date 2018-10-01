@@ -17,49 +17,16 @@
     <?php if (get_field ('panel_boczny-archiwum', 'option') ) :?>
       <div class="archives">
         <h2>Archiwum</h2>
-      <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
-      <option value=""><?php echo esc_attr( __( 'Select Month' ) ); ?></option> 
-      <?php wp_get_archives( array( 'type' => 'monthly', 'format' => 'option', 'show_post_count' => 1 ) ); ?>
-      </select>
+        <div class="custom-select" style="width:200px;">
+          <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+          <option value=""><?php echo esc_attr( __( 'Select Month' ) ); ?></option> 
+          <?php wp_get_archives( array( 'type' => 'monthly', 'format' => 'option', 'show_post_count' => 1 ) ); ?>
+          </select>
+        </div>
       </div>
     <?php endif; ?>
 
-<?php /*
-    $panel_boczny = get_field('panel_boczny', 'options');
-    foreach ($panel_boczny as $key => $value) :?>
-
-    <div class="selected_posts">
-      <h2><?= $value['naglowek']; ?></h2>
- 
-      <?php 
-      $posts = $value;
-      if ($posts) :
-      foreach( $posts as $post):
-        setup_postdata($post); 
-        ?>
-        <a href="<?= get_permalink(); ?>" title="<?php the_title(); ?>">
-        <div class="selected_posts_img">
-          <?= get_the_post_thumbnail($post_id, 'thumbnail'); ?>
-        </div>
-        <div class="selected_posts_title">
-          <h2><?php the_title(); ?></h2>
-        </div>
-        </a>
-      <?php  
-      endforeach;
-      wp_reset_postdata(); 
-      endif;
-      ?>
-    </div>
-
-  <?php endforeach; */ ?>
-
 <?php 
-function dd($val) {
-  echo '<pre>';
-  die(var_dump($val));
-}
-
   if(have_rows('panel_boczny', 'options')) : ?>
   <div class="selected_posts">
   <?php

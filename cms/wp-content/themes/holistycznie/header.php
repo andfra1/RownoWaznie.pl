@@ -24,7 +24,10 @@ $header = [
     <div class="row">
       <div class="col-lg-12">
 
-        <?php get_top_menu( $topmenu ); ?>
+        <div class="header__top">
+          <?php get_top_menu( $topmenu ); ?>
+          <?php get_search_form(); ?>
+        </div>
 
         <div class="header__logo">
           <a class="header__logo-link" href="<?= get_home_url(); ?>">

@@ -27,9 +27,9 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
 /* server */
-// define('DB_NAME', 'andfra_hol');
-// define('DB_USER', 'andfra_hol');
-// define('DB_PASSWORD', 'WSEoTB1H');
+// define('DB_NAME', 'chateau8_wp1');
+// define('DB_USER', 'chateau8_wp1');
+// define('DB_PASSWORD', 'M~r890*oV0B[tDNhHW)27,#9');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -83,6 +83,8 @@ $table_prefix  = 'hol_';
 define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
+// define( 'WP_SITEURL', 'http://www.rownowaznie.hekko24.pl/' );  
+// define( 'WP_HOME',    'http://www.rownowaznie.hekko24.pl/' );
 define( 'WP_SITEURL', 'http://localhost/__blog-Justyna/cms/' );  
 define( 'WP_HOME',    'http://localhost/__blog-Justyna/cms/' );
 

@@ -86,10 +86,12 @@ a:not([class]):focus {
 
 .content {
   //padding: 0 15px;
-  max-width: 650px;
+  width: 100%;
+    max-width: 650px;
   float: left;
 
   @include mq(1200) {
+    width: 100%;
     max-width: 600px;
   }
 
@@ -97,6 +99,28 @@ a:not([class]):focus {
     max-width: none;
     padding: 15px;
   }
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    label {
+      display: none;
+    }
+    input {
+      padding: 5px 8px;
+      max-width: 300px;
+      height: 100%;
+      display: block;
+      border: 1px solid $c-gray;
+      margin-right: 5px;
+      font-size: 22px;
+    }
+    button {
+      width: 22px;
+      height: 22px;
+    }
+    }
 }
 
 .container {

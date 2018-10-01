@@ -12,22 +12,66 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
-	</header>
-	<div class="page-content">
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+<section class="section slider">
+	<div class="container">
+		<div class="row">
+			<div class="slider-articles owl-carousel" id="slider-articles">
+				<?php
+					$popular = new WP_Query( array( 'posts_per_page' => 4, 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+					if ( $popular->have_posts() ) :
+					while ( $popular->have_posts() ) : $popular->the_post();
+					?>
+				<div class="post">
+					<div class="article">
+						<a href="<?= get_permalink(); ?>" class="article__img" title="<?php the_title(); ?>">
+							<?= get_the_post_thumbnail();?>
+						</a>
+						<div class="article__content">
+							<h2 class="article__content-header">
+								<a href="<?= get_permalink(); ?>" title="<?php the_title(); ?>" class="article__content-header__link">
+									<?php the_title(); ?>
+								</a>
+							</h2>
+							<time class="article__content-date">
+								<?= get_the_date(); ?>
+							</time>
+						</div>
+					</div>
+				</div>
+				<?php endwhile;
+					wp_reset_postdata();
+					else :
+				?>
+				<p>
+					<?php esc_html_e( 'Brak postów do wyświetlenia.' ); ?>
+				</p>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+</section>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twentyseventeen' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+<section class="section">
+	<div class="container">
+		<div class="row">
+		<div class="col col-sm-12 col-md-8">
+			<div class="content">
+				<h1><?php _e( 'Nie znaleziono treści :(', 'twentyseventeen' ); ?></h1>
+			
+				<?php
+				if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-		<?php else : ?>
+					<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twentyseventeen' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentyseventeen' ); ?></p>
-			<?php
-				get_search_form();
+				<?php else : ?>
 
-		endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+					<p><?php _e( 'Strona, której szukasz niestety jest pusta. Skorzystaj z wyszukiwarki, aby odnaleźć interesujący Cię post.', 'twentyseventeen' ); ?></p>
+				<?php
+					get_search_form();
+					endif;
+				?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

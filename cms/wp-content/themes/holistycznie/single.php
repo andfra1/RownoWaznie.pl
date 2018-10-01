@@ -17,10 +17,10 @@ get_header(); ?>
 		<div class="row">
 			<div class="slider-articles owl-carousel" id="slider-articles">
 				<?php
-$popular = new WP_Query( array( 'posts_per_page' => 4, 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
-if ( $popular->have_posts() ) :
-while ( $popular->have_posts() ) : $popular->the_post();
-?>
+					$popular = new WP_Query( array( 'posts_per_page' => 4, 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+					if ( $popular->have_posts() ) :
+					while ( $popular->have_posts() ) : $popular->the_post();
+					?>
 				<div class="post">
 					<div class="article">
 						<a href="<?= get_permalink(); ?>" class="article__img" title="<?php the_title(); ?>">
@@ -39,8 +39,9 @@ while ( $popular->have_posts() ) : $popular->the_post();
 					</div>
 				</div>
 				<?php endwhile;
-	wp_reset_postdata();
-	else : ?>
+					wp_reset_postdata();
+					else :
+				?>
 				<p>
 					<?php esc_html_e( 'Brak postów do wyświetlenia.' ); ?>
 				</p>
@@ -59,7 +60,7 @@ $this_cat = get_the_category($post->ID);
 <section class="section">
 	<div class="container">
 		<div class="row">
-			<!-- <div class="col col-sm-12 col-md-8"> -->
+			<div class="col col-sm-12 col-md-8">
 				<div class="content">
 					<section class="post__content">
 						<h1>
@@ -88,15 +89,17 @@ $this_cat = get_the_category($post->ID);
 									Podobne artykuły
 								</h2>
 							</div>
+
 							<?php
-$args =  [
-	'posts_per_page' => 3, 
-	'order'=> 'ASC', 
-	'orderby' => 'title', 
-	'category_name' => $this_cat[0]->cat_name
-];
-$myposts = get_posts( $args );
-foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+								$args =  [
+									'posts_per_page' => 3, 
+									'order'=> 'ASC', 
+									'orderby' => 'title', 
+									'category_name' => $this_cat[0]->cat_name
+								];
+								$myposts = get_posts( $args );
+								foreach ( $myposts as $post ) : setup_postdata( $post );
+							?>
 
 							<div class="col-xs-12 col-sm-4">
 								<div class="post">
@@ -126,9 +129,9 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 								</div>
 							</div>
 							<?php
-endforeach; 
-wp_reset_postdata();
-?>
+								endforeach; 
+								wp_reset_postdata();
+							?>
 						</div>
 					</section>
 
@@ -182,7 +185,7 @@ wp_reset_postdata();
 					</section>
 
 				</div>
-			<!-- </div> -->
+			</div>
 			<?php get_template_part( 'view/aside', '' );?>
 		</div>
 	</div>

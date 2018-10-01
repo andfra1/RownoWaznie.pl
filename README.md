@@ -25,6 +25,7 @@ Specyfikacja:
 - strona wyyników wyszukiwania i 404
 - poprawić nazwę strony w stopce
 - posty, archiwum i kategorie - zrobić wspólny template
+- polityka prywatności
 
 #### ver 1.0
 - gotowy szablon na produkcję

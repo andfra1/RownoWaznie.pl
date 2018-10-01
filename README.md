@@ -4,7 +4,7 @@ Specyfikacja:
 - grid na bootstrap 3.0
 - menu bazujące na kategoriach
 - jQuery & JS101
-- Owl-Slider 4.0
+- Owl-Slider 2.3.4
 - ACF w panelu bocznym (o mnie, archiwum, wybrane posty)
 - wtyczki wymagane: ACF, Contact Form 7, wpDiscuz
 
@@ -16,10 +16,13 @@ Specyfikacja:
 ##### poprawiono
 - (css) problem z wyświetlaniem pasków w hamburgerze
 - (css) błędne media queries dla klasy .container wyświetlającej główną treść bloga
+- (css) poprawienie spacer-a pod górną belką
 
 ##### to do:
 - szukajka
 - customowy select (lista z archiwum)
+- dodanie linków do social media
+- strona wyyników wyszukiwania i 404
 
 #### ver 1.0
 - gotowy szablon na produkcję

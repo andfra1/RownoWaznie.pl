@@ -23,6 +23,8 @@ Specyfikacja:
 - customowy select (lista z archiwum)
 - dodanie linków do social media
 - strona wyyników wyszukiwania i 404
+- poprawić nazwę strony w stopce
+- posty, archiwum i kategorie - zrobić wspólny template
 
 #### ver 1.0
 - gotowy szablon na produkcję

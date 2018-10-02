@@ -9,6 +9,21 @@ Specyfikacja:
 - ACF w panelu bocznym (o mnie, archiwum, wybrane posty)
 - wtyczki wymagane: ACF, Contact Form 7, wpDiscuz
 
+### ver 1.2
+testy obecnie: Page Insights: 50 mobile, 81 Desktop; Pingdom 90B; Gmetrix 77%, Yslow 88%; W3C: 13 warningów, 1 error
+#### dodano:
+- linki do social media + modyfikacja ACF (ujednolicenie wprowadzania linków i ikony)
+- minifikacje HTML (poprawka, wcześniejsza nie działała)
+#### poprawiono
+- RWD w sekcji header
+- zmniejszono wynikowy JS: dodanie jQuery CDN, wrzucenie Owl-Carousel do oddzielnego pliku
+- wyłączenie domyślnej czcionki "Libre Franklin" pobieraną z Google Fonts przez szablon
+#### to do:
+- posty, archiwum i kategorie - zrobić wspólny template
+- polityka prywatności
+- poprawienie minifikacji CSS
+- poprawienie zawartości <head>
+
 ### ver 1.1.1
 #### dodano:
 - szukajkę

@@ -22,14 +22,12 @@
 /** The name of the database for WordPress */
 
 /* local */
-define('DB_NAME', 'holistycznie');
+define('DB_NAME', 'chateau8_wp1');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
 /* server */
-// define('DB_NAME', 'chateau8_wp1');
-// define('DB_USER', 'chateau8_wp1');
-// define('DB_PASSWORD', 'M~r890*oV0B[tDNhHW)27,#9');
+
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

@@ -3,22 +3,6 @@ include_once('html_head.php');
 ?>
 <div class="offCanvas" id="offCanvas"></div>
 
-<?php
-$header = [
-  'logo' => 'Holistycznie.pl',
-  'menu' => [
-    'ciało' => './post/category/cialo',
-    'dusza' => './?show=dusza',
-    'umysł' => './?show=umysl',
-    'psyche' => './?show=psyche'
-  ],
-  'menuOnTop' => [
-    'o mnie' => '#',
-    'kontakt' => '#'
-  ],
-];
-?>
-
 <header class="header" id="header">
   <div class="container border-bottom">
     <div class="row">
@@ -27,6 +11,19 @@ $header = [
         <div class="header__top">
           <?php get_top_menu( $topmenu ); ?>
           <?php get_search_form(); ?>
+            <?php
+              if (have_rows('dodaj_portal_spolecznosciowy','option')):
+            ?>
+              <div class="header__top_social">
+								<?php while (have_rows('dodaj_portal_spolecznosciowy','option')) : the_row()?>
+                  <a href="<?= get_sub_field('wklej_link','option'); ?>" target="_blank" class="<?= get_sub_field('portal_spolecznosciowy','option'); ?>"></a>
+								<?php
+                  endwhile;
+                ?>
+              </div>
+            <?php
+              endif;
+            ?>
         </div>
 
         <div class="header__logo">

@@ -13,6 +13,20 @@
         </div>
       </div>
     <?php endif;?>
+
+    <?php
+      if (have_rows('dodaj_portal_spolecznosciowy','option')):
+    ?>
+      <div class="social">
+        <?php while (have_rows('dodaj_portal_spolecznosciowy','option')) : the_row()?>
+          <a href="<?= get_sub_field('wklej_link','option'); ?>" target="_blank" class="<?= get_sub_field('portal_spolecznosciowy','option'); ?>"></a>
+        <?php
+          endwhile;
+        ?>
+      </div>
+    <?php
+      endif;
+    ?>
     
     <?php if (get_field ('panel_boczny-archiwum', 'option') ) :?>
       <div class="archives">

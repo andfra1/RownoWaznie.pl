@@ -67,7 +67,6 @@
     padding: 15px;
     max-width: none;
   }
-}
 
 .bio {
   text-align: center;
@@ -93,4 +92,22 @@
       @include absimg;
     }
   }
+}
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  &>*{
+    display: block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+    &:before {
+      font-size: 26px;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
 }

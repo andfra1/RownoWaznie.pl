@@ -54,7 +54,7 @@ gulp.task('css', () => {
                 outputStyle: 'compressed'
             })
             .on('error', sass.logError))
-        .pipe(concat(baseName + '.min.css'))
+        .pipe(concat(baseName + '.css'))
         .pipe(gulp.dest(path.css.prod))
         .pipe(postcss([
             autoprefixer({
@@ -62,7 +62,7 @@ gulp.task('css', () => {
             })
         ]))
         .pipe(cmq())
-        .pipe(csscomb(path.css.prod + baseName + '.min.css'))
+        .pipe(csscomb(path.css.prod + baseName + '.css'))
         .pipe(gulp.dest(path.css.prod))
         .pipe(notify('CSS Done!'))
 });
@@ -72,7 +72,7 @@ gulp.task('js', () => {
         .pipe(plumber({
             handleError: onError
         }))
-        .pipe(concat(baseName + '.min.js'))
+        .pipe(concat(baseName + '.js'))
         .pipe(gulp.dest(path.js.prod))
         .pipe(notify('JS Done!'))
 });

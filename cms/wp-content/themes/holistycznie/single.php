@@ -72,8 +72,15 @@ $this_cat = get_the_category($post->ID);
 							</div>
 							<div class="post__info-share">
 								udostępnij:
-								<a href="<?= get_field('fb_share','option'); ?><?= get_permalink(); ?>" class="icon-facebook2"></a>
-								<a href="<?= get_field('gp_share','option'); ?><?= get_permalink(); ?>" class="icon-google-plus2"></a>
+								<?php
+									if (have_rows('dodaj_portal_do_share-owania','option')):
+									while (have_rows('dodaj_portal_do_share-owania','option')) : the_row()
+								?>
+										<a href="<?= get_sub_field('link','option'); ?><?= get_permalink(); ?>" target="_blank" class="<?= get_sub_field('portal','option'); ?>"></a>
+								<?php
+									endwhile;
+									endif;
+								?>
 							</div>
 						</div>
 						<p>

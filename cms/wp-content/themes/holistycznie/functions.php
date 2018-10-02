@@ -266,7 +266,7 @@ function twentyseventeen_fonts_url() {
 	 * supported by Libre Franklin, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$libre_franklin = _x( 'on', 'Libre Franklin font: on or off', 'twentyseventeen' );
+	$libre_franklin = _x( 'off', 'Libre Franklin font: on or off', 'twentyseventeen' );
 
 	if ( 'off' !== $libre_franklin ) {
 		$font_families = array();
@@ -449,7 +449,7 @@ function twentyseventeen_scripts() {
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
-	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
+	//wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
 	wp_localize_script( 'twentyseventeen-skip-link-focus-fix', 'twentyseventeenScreenReaderText', $twentyseventeen_l10n );
 

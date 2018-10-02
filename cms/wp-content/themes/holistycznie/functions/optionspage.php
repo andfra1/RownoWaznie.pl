@@ -31,9 +31,9 @@ if( function_exists('acf_add_options_page') ) {
 		));
 
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Share',
-			'menu_title'	=> 'Share',
-			'menu_slug' 	=> $manage_slug . '-share',
+			'page_title' 	=> 'Social Media',
+			'menu_title'	=> 'Social Media',
+			'menu_slug' 	=> $manage_slug . '-socialmedia',
 			'parent_slug' => $manage_slug
 		));
 }

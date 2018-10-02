@@ -14,10 +14,36 @@
     display: flex;
     width: 100%;
     margin: 10px 0;
+    align-items: center;
+    @include mq(400) {
+      flex-wrap: wrap;
+    }
+    &_social{
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      margin: 0 10px;
+      >* {
+        width: 18px;
+        height: 18px;
+        display: block;
+        margin: 0 3px;
+        text-decoration: none;
+        &:before {
+          color: $c-gray2 !important;
+          font-size: 18px;
+          transition: color 0.3s ease;
+        }
+        &:hover:before {
+          color: $c-dark !important;
+        }
+      }
+    }
     .search-form {
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      flex: 1 0 auto;
       label {
         display: none;
       }
@@ -30,7 +56,7 @@
         margin-right: 5px;
         font-size: 12px;
         @include mq(500) {
-          width: 140px;
+          width: 100%;
         }
       }
       button {
@@ -78,6 +104,9 @@
 
     @include mq(767) {
       height: 60px;
+      margin-bottom: 0;
+    }
+    @include mq(400) {
       justify-content: flex-start;
     }
 
@@ -87,11 +116,20 @@
       position: relative;
       display: inline-block;
       margin: 0 auto;
-      color: $c-dark !important;
+      color: transparent !important;
+      color: transparent;
+      background-clip: text ;
+		  -webkit-background-clip: text ;
+      background-image: linear-gradient(45deg, #e91e63 0%, #333 100%);
+      padding: 20px;
 
       @include mq(767) {
         font-size: 40px;
         margin: 0;
+      }
+      @include mq(400) {
+        font-size: 32px;
+        justify-content: flex-start;
       }
     }
   }
@@ -231,7 +269,7 @@
 
 .underHeader {
   display: none;
-  height: 125px;
+  height: 109px;
 
   @include mq(767) {
     display: block;

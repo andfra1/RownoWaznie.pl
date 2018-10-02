@@ -32,16 +32,16 @@
 
 <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/main.min.css">
 
-<link rel="profile" href="http://gmpg.org/xfn/11">
+<!-- <link rel="profile" href="http://gmpg.org/xfn/11"> -->
 
 <!-- Globalny tag witryny (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?= get_field('ga_code', 'option')?>"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=<?//= get_field('ga_code', 'option')?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '<?= get_field('ga_code', 'option')?>');
-</script>
+  gtag('config', '<?//= get_field('ga_code', 'option')?>');
+</script> -->
 
 <?php wp_head(); ?>
 </head>

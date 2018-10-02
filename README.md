@@ -1,6 +1,8 @@
 # RownoWaznie.pl
 Prosty szablon bloga w WordPress wykonany na bazie malvinape.pl & edytazajac.pl
 
+tymczasowy adres: http://www.rownowaznie.hekko24.pl/
+
 Specyfikacja:
 - grid na bootstrap 3.0
 - menu bazujące na kategoriach

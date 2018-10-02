@@ -26,7 +26,7 @@ testy obecnie:
 - posty, archiwum i kategorie - zrobić wspólny template
 - polityka prywatności
 - poprawienie minifikacji CSS
-- poprawienie zawartości <head>
+- poprawienie zawartości tegu head
 
 ### ver 1.1.1
 #### dodano:

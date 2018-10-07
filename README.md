@@ -9,6 +9,15 @@ Specyfikacja:
 - ACF w panelu bocznym (o mnie, archiwum, wybrane posty)
 - wtyczki wymagane: ACF, Contact Form 7, wpDiscuz
 
+### ver 1.3
+#### dodano:
+- polityka prywatności
+
+#### poprawiono
+- posty, archiwum i kategorie - wspólny template
+- minifikację CSS
+- zawartość tagu head
+
 ### ver 1.2
 #### dodano:
 - linki do social media + modyfikacja ACF (ujednolicenie wprowadzania linków i ikony)

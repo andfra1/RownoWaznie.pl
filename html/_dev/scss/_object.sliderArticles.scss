@@ -1,4 +1,7 @@
 .section.slider {
+  .row{
+    min-height: 224px;
+  }
   @include mq(500) {
     display: none;
   }

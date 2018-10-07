@@ -1,4 +1,3 @@
-<!-- <aside class="col-sm-12 col-md-3 col-md-offset-1 aside"> -->
   <aside class="aside">
     <?php if(!empty(get_field('omnie-tresc', 'option'))):?>
       <div class="bio">

@@ -1,6 +1,4 @@
 var gulp = require('gulp'),
-    bs = require('browser-sync').create(),
-    reload = bs.reload,
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'), //adds prefixes and sufixes for files
     sass = require('gulp-sass'),
@@ -11,7 +9,6 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    uncss = require('gulp-uncss'), //removes unused css
     minifycss = require('gulp-minify-css'),
     wait = require('gulp-wait');
 
@@ -62,9 +59,6 @@ gulp.task('css', () => {
             })
             .on('error', sass.logError))
         .pipe(concat(baseName + '.css'))
-        // .pipe(uncss({
-        //     html: [path.html] //only for HTML!!
-        // }))
         .pipe(gulp.dest(path.css.prod))
         .pipe(postcss([
             autoprefixer({
@@ -87,9 +81,38 @@ gulp.task('js', () => {
         .pipe(notify('JS Done!'))
 });
 
-gulp.task('html', () => {
-    return gulp.src(path.html)
-        .pipe(notify('HTML Done!'))
+gulp.task('css-dev', () => {
+    return gulp.src(path.css.dev)
+        .pipe(plumber({
+            handleError: onError
+        }))
+        .pipe(wait(500))
+        .pipe(sass
+            .sync({
+                outputStyle: 'compressed'
+            })
+            .on('error', sass.logError))
+        .pipe(concat(baseName + '.min.css'))
+        .pipe(gulp.dest(path.css.prod))
+        .pipe(postcss([
+            autoprefixer({
+                browsers: "> 1%"
+            })
+        ]))
+        .pipe(cmq())
+        .pipe(csscomb(path.css.prod + baseName + '.min.css'))
+        .pipe(gulp.dest(path.css.prod))
+        .pipe(notify('CSS Done!'))
+});
+
+gulp.task('js-dev', () => {
+    return gulp.src(path.js.dev)
+        .pipe(plumber({
+            handleError: onError
+        }))
+        .pipe(concat(baseName + '.min.js'))
+        .pipe(gulp.dest(path.js.prod))
+        .pipe(notify('JS Done!'))
 });
 
 gulp.task('CSSProd', ['css'], () => {
@@ -121,13 +144,6 @@ gulp.task('default', ['js', 'css']);
 gulp.task('prod', ['CSSProd', 'JSProd']);
 
 gulp.task('watch', () => {
-    gulp.watch(path.js.dev, ['js'])
-    gulp.watch(path.css.dev, ['css'])
-    gulp.watch(path.html, ['html'])
-});
-
-gulp.task('go', ['sync'], () => {
-    gulp.watch(path.js.dev, ['js']).on('change', bs.reload);
-    gulp.watch(path.css.dev, ['css']).on('change', bs.reload);
-    gulp.watch(path.html, ['html']).on('change', bs.reload);
+    gulp.watch(path.js.dev, ['js-dev'])
+    gulp.watch(path.css.dev, ['css-dev'])
 });

@@ -1,3 +1,4 @@
+$menuHeight: 133px;
 .header {
   position: relative;
   z-index: 666;
@@ -15,7 +16,7 @@
     width: 100%;
     margin: 10px 0;
     align-items: center;
-    @include mq(400) {
+    @include mq(500) {
       flex-wrap: wrap;
     }
     &_social{
@@ -67,6 +68,9 @@
     .header__menuOnTop {
       text-align: left;
       margin: 0;
+      @include mq(500) {
+        flex: 1 0 auto;
+      }
       li {
         display: inline-block;
         transition: all 0.3s;
@@ -106,7 +110,7 @@
       height: 60px;
       margin-bottom: 0;
     }
-    @include mq(400) {
+    @include mq(500) {
       justify-content: flex-start;
     }
 
@@ -127,13 +131,13 @@
         font-size: 40px;
         margin: 0;
       }
-      @include mq(400) {
+      @include mq(500) {
         font-size: 32px;
         justify-content: flex-start;
+        padding: 5px;
       }
     }
   }
-
   &__menu {
     display: flex;
     height: 40px;
@@ -146,7 +150,7 @@
       right: -110%;
       display: flex;
       z-index: 1;
-      top: 112px;
+      top: $menuHeight +1;
       background-color: $c-white;
       transition: right 0.3s;
       width: 100%;
@@ -269,7 +273,7 @@
 
 .underHeader {
   display: none;
-  height: 109px;
+  height: $menuHeight;
 
   @include mq(767) {
     display: block;

@@ -46,18 +46,23 @@ ul li a {
 }
 
 blockquote,
-q {
+q, blockquote *, q *{
   quotes: none;
+  font-family: inherit;
+}
+
+blockquote *, q *{
+display: inline;
 }
 
 blockquote:before,
 q:before {
-  content: '&bdquo;';
+  content: '\201E';
 }
 
 blockquote:after,
 q:after {
-  content: '&rdquo;';
+  content: '\201D';
 }
 
 cite {

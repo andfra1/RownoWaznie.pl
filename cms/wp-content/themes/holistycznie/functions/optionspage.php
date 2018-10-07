@@ -19,7 +19,7 @@ if( function_exists('acf_add_options_page') ) {
 		acf_add_options_sub_page(array(
 			'page_title' 	=> 'Panel boczny',
 			'menu_title'	=> 'Panel boczny',
-			'menu_slug' 	=> $manage_slug . '-Panel boczny',
+			'menu_slug' 	=> $manage_slug . '-panel',
 			'parent_slug' => $manage_slug
 		));
 
@@ -34,6 +34,13 @@ if( function_exists('acf_add_options_page') ) {
 			'page_title' 	=> 'Social Media',
 			'menu_title'	=> 'Social Media',
 			'menu_slug' 	=> $manage_slug . '-socialmedia',
+			'parent_slug' => $manage_slug
+		));
+
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Polityka prywatności',
+			'menu_title'	=> 'Polityka prywatności',
+			'menu_slug' 	=> $manage_slug . '-polityka',
 			'parent_slug' => $manage_slug
 		));
 }

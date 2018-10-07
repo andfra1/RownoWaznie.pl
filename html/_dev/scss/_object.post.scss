@@ -1,6 +1,10 @@
 // dodatkowe ustawienia dla pojedynczego postu
 .post__content {
   margin: 50px 0;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: #333;
   .post {
     &__info {
       color: $c-gray;

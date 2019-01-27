@@ -5,9 +5,9 @@
           <img src="<?= get_field('omnie-zdjecie', 'option')['url']; ?>" alt="<?= get_field('omnie-zdjecie', 'option')['alt']; ?>">
         </div>
         <div class="bio__info">
-        <h2>
+        <h3>
           <?= get_field('omnie-naglowek', 'option'); ?>
-        </h2>
+        </h3>
           <?= get_field('omnie-tresc', 'option'); ?>
         </div>
       </div>
@@ -29,7 +29,7 @@
     
     <?php if (get_field ('panel_boczny-archiwum', 'option') ) :?>
       <div class="archives">
-        <h2>Archiwum</h2>
+        <h3>Archiwum</h3>
         <div class="custom-select" style="width:200px;">
           <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
           <option value=""><?php echo esc_attr( __( 'Select Month' ) ); ?></option> 
@@ -74,5 +74,8 @@
         <?php
   endif;
   ?>
+  <div>
+    <?php st_tag_cloud(); ?>
+  </div>
 
 </aside>

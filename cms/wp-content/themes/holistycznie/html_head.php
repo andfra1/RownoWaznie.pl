@@ -27,12 +27,22 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <!-- Globalny tag witryny (gtag.js) - Google Analytics -->
+<?php if(!empty(get_field('ga_code', 'option'))) : ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?= get_field('ga_code', 'option')?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '<?= get_field('ga_code', 'option')?>');
+</script>
+<?php endif; ?>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-2234685907778148",
+          enable_page_level_ads: true
+     });
 </script>
 
 <?php wp_head(); ?>

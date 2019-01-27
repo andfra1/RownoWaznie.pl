@@ -6,9 +6,9 @@ include_once('html_head.php');
 $cookie_name = 'rownowazniepl';
 if(!isset($_COOKIE[$cookie_name])) :?>
 <div class="privacy-policy">
-    <p>
+    
       <?= get_field('polityka_prywatnosci', 'option'); ?>
-    </p>
+    
     <button type="button" id="jsPrivacy-policy_btn" class="privacy-policy_btn" value="<?= get_field('omnie-naglowek', 'option'); ?>">
       <?= get_field('nazwa_przycisku', 'option'); ?>
     </button>

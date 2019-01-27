@@ -6,6 +6,16 @@
   line-height: 1.4rem;
   color: #333;
   .post {
+    &__tags {
+      display: block;
+      margin-top: -20px;
+      &>a {
+        margin: 5px;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 12px;
+        color: $c-gray;
+      }
+    }
     &__info {
       color: $c-gray;
       margin: 30px 0;

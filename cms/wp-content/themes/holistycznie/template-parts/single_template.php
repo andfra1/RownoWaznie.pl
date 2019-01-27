@@ -11,6 +11,9 @@ $this_cat = get_the_category($post->ID);
 						<h1>
 							<?php the_title(); ?>
 						</h1>
+						<span class="post__tags">
+							<?php the_tags( '', '', '' ); ?>
+						</span>
 						<div class="post__info">
 							<div class="post__info-date">
 								<?= get_the_date(); ?>
@@ -28,9 +31,8 @@ $this_cat = get_the_category($post->ID);
 								?>
 							</div>
 						</div>
-						<p>
+							<p><?php the_post_thumbnail(); ?></p>
 							<?php the_content(); ?>
-						</p>
 					</section>
 					<?php endwhile; ?>
 					<?php endif; ?>

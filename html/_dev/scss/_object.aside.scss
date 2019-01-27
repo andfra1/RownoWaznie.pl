@@ -5,6 +5,11 @@
   position: relative;
   max-width: 300px;
 
+  .st-tags {
+    margin: 4px;
+    display: inline-block;
+  }
+
   &>* {
     //padding: 15px;
     margin: 50px;
@@ -51,7 +56,7 @@
           flex: 1;
           justify-content: flex-start;
 
-          h2 {
+          &>* {
             font-size: 16px;
             margin: 0;
             text-align: left;

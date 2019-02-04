@@ -24,7 +24,7 @@
             </div>
             
             <div class="footer__bottomSide">
-            Projekt i realzacja <a href="http://andfra1.github.io" rel="noreferrer" target="_blank">andfra</a>
+            Projekt i realzacja <a href="http://andfra1.github.io" rel="nofollow no-referrer" target="_blank">andfra</a>
             </div>
             
 

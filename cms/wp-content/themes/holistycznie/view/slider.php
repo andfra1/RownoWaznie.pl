@@ -18,9 +18,9 @@
 									<?php the_title(); ?>
 								</a>
 							</h2>
-							<time class="article__content-date">
+							<div class="article__content-date">
 								<?= get_the_date(); ?>
-							</time>
+							</div>
 						</div>
 					</div>
 				</div>

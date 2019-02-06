@@ -587,5 +587,4 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 include 'functions/menu.php';
 include 'functions/optionspage.php';
-
-require_once 'functions/minify-html.php';
+include 'functions/minify-html.php';

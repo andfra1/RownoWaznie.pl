@@ -76,9 +76,9 @@ $this_cat = get_the_category($post->ID);
 												<?php the_title(); ?>
 											</a>
 										</h2>
-										<time class="article__date">
+										<div class="article__date">
 											<?= get_the_date(); ?>
-										</time>
+										</div>
 									</div>
 								</div>
 							</div>

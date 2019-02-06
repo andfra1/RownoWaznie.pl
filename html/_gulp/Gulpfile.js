@@ -68,7 +68,7 @@ gulp.task('css', () => {
         .pipe(cmq())
         .pipe(csscomb(path.css.prod + baseName + '.css'))
         .pipe(gulp.dest(path.css.prod))
-        .pipe(notify('CSS Done!'))
+        //.pipe(notify('CSS Done!'))
 });
 
 gulp.task('js', () => {
@@ -102,7 +102,7 @@ gulp.task('css-dev', () => {
         .pipe(cmq())
         .pipe(csscomb(path.css.prod + baseName + '.min.css'))
         .pipe(gulp.dest(path.css.prod))
-        .pipe(notify('CSS Done!'))
+        //.pipe(notify('CSS Done!'))
 });
 
 gulp.task('js-dev', () => {

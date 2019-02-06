@@ -34,9 +34,9 @@ get_header(); ?>
 							<span class="article__author">
 								<?= get_author_name(); ?>
 							</s>
-							<time datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
+							<div datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
 								<?= get_the_date(); ?>
-							</time>
+							</div>
 							<div class="article__comments">
 								<?= get_comments_number($post->ID); ?>
 							</div>

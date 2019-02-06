@@ -24,7 +24,7 @@
             </div>
             
             <div class="footer__bottomSide">
-            Projekt i realzacja <a href="http://andfra1.github.io" rel="nofollow no-referrer" target="_blank">andfra</a>
+            Projekt i realzacja <a href="http://andfra1.github.io" rel="nofollow" target="_blank">andfra</a>
             </div>
             
 
@@ -34,6 +34,20 @@
     </div>
     </div>
 </footer>
+<?php
+$cookie_name = 'rownowaznie';
+if(!isset($_COOKIE[$cookie_name])) :?>
+<div class="privacy-policy">
+    
+      <?= get_field('polityka_prywatnosci', 'option'); ?>
+    
+    <button type="button" id="jsPrivacy-policy_btn" class="privacy-policy_btn" value="<?= get_field('omnie-naglowek', 'option'); ?>">
+      <?= get_field('nazwa_przycisku', 'option'); ?>
+    </button>
+  </div>
+<?php
+  endif;
+?>
 </div><!-- #canvas -->
 
 <script

@@ -27,9 +27,9 @@
 							<span class="article__author">
 								<?= get_author_name(); ?>
 							</span>
-							<time datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
+							<div datetime="<?= get_the_date('Y-m-d'); ?>" class="article__date">
 								<?= get_the_date(); ?>
-							</time>
+							</div>
 							<a href="<?= get_permalink(); ?>#comments" class="article__comments">
 								<?= get_comments_number($post->ID); ?>
 							</a>

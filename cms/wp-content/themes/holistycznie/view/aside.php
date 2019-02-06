@@ -2,7 +2,7 @@
     <?php if(!empty(get_field('omnie-tresc', 'option'))):?>
       <div class="bio">
         <div class="bio__avatar">
-          <img src="<?= get_field('omnie-zdjecie', 'option')['url']; ?>" alt="<?= get_field('omnie-zdjecie', 'option')['alt']; ?>">
+          <img src="<?= get_field('omnie-zdjecie', 'option')['url']; ?>" alt="<?= get_field('omnie-zdjecie', 'option')['alt']; ?>" class="lazy">
         </div>
         <div class="bio__info">
         <h3>

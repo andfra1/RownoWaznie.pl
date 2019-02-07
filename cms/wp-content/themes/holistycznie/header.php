@@ -1,7 +1,6 @@
 <?php
 include_once('html_head.php');
 ?>
-
 <div class="offCanvas" id="offCanvas"></div>
 
 <header class="header" id="header">

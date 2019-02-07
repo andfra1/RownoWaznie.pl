@@ -58,7 +58,7 @@ $this_cat = get_the_category($post->ID);
 							<div class="col-xs-12 col-sm-4">
 								<div class="post">
 									<div class="article">
-										<a href="#" class="article__img">
+										<a href="<?= get_the_permalink(); ?>" class="article__img">
 											<?= the_post_thumbnail('medium', array('class' => 'lazy')); ?>
 										</a>
 										<div class="article__category">
@@ -72,7 +72,7 @@ $this_cat = get_the_category($post->ID);
 									</div>
 									<div class="article__content">
 										<h2 class="article__header">
-											<a href="#" class="article__header__link">
+											<a href="<?= get_the_permalink(); ?>" class="article__header__link">
 												<?php the_title(); ?>
 											</a>
 										</h2>

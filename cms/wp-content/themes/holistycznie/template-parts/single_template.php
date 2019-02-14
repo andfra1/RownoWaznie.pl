@@ -31,7 +31,7 @@ $this_cat = get_the_category($post->ID);
 								?>
 							</div>
 						</div>
-							<p><?php the_post_thumbnail(); ?></p>
+							<p><?= the_post_thumbnail('medium_large', array('class' => 'lazy')); ?></p>
 							<?php the_content(); ?>
 					</section>
 					<?php endwhile; ?>
@@ -59,7 +59,7 @@ $this_cat = get_the_category($post->ID);
 								<div class="post">
 									<div class="article">
 										<a href="<?= get_the_permalink(); ?>" class="article__img">
-											<?= the_post_thumbnail('medium', array('class' => 'lazy')); ?>
+											<?= the_post_thumbnail('thumbnail', array('class' => 'lazy')); ?>
 										</a>
 										<div class="article__category">
 											<?php $category_detail=get_the_category($post->ID);

@@ -3,6 +3,8 @@
 @import 'setting.vars';
 @import 'setting.wordpress';
 
+@import "vendor/core-vendors";
+
 @import 'tool.mixins';
 @import 'tool.generic';
 @import 'tool.icons';

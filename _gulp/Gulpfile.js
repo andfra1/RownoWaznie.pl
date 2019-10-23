@@ -1,25 +1,21 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     plumber = require('gulp-plumber'),
-    rename = require('gulp-rename'), //adds prefixes and sufixes for files
+    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    postcss = require('gulp-postcss'), //runs css autoprefixer
-    autoprefixer = require('autoprefixer'),
-    csscomb = require('gulp-csscomb'), //cleans messy css
-    cmq = require('gulp-merge-media-queries'), //merges mediaquery
+    autoprefixer = require('gulp-autoprefixer'),
+    cmq = require('gulp-merge-media-queries'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    minifycss = require('gulp-minify-css'),
+    minifycss = require('gulp-clean-css'),
     wait = require('gulp-wait');
 
-var baseName = 'main';
-
 /* paths */
-var path = {
+let path = {
     css: {
         dev: [
-            '../html/_dev/scss/vendor/**/*.scss',
-            '../html/_dev/scss/*.scss'
+            //'../html/_dev/scss/vendor/**/*.scss',
+            '../html/_dev/scss/'
         ],
         prod: '../cms/wp-content/themes/holistycznie/assets/css/'
     },
@@ -32,107 +28,88 @@ var path = {
     }
 };
 
-let onError = (err) => {
-    console.log(err);
+let jsFileName = 'main';
+let scssFileNames = [
+    'main'
+];
+
+function css(done){
+    scssFileNames.forEach((i,v) => {
+        coreScss(scssFileNames[v]);
+    });
+    done();
 }
 
-gulp.task('css', () => {
-    return gulp.src(path.css.dev)
+let onError = (err) => {
+    console.log(err);
+    err();
+};
+
+function coreScss(name) {
+    return gulp.src(path.css.dev + name + '.scss')
         .pipe(plumber({
             handleError: onError
         }))
         .pipe(wait(500))
-        .pipe(sass
-            .sync({
-                outputStyle: 'compressed'
-            })
+        //.pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sass()
             .on('error', sass.logError))
-        .pipe(concat(baseName + '.css'))
-        .pipe(gulp.dest(path.css.prod))
-        .pipe(postcss([
-            autoprefixer({
-                browsers: "> 1%"
-            })
-        ]))
-        .pipe(cmq())
-        .pipe(csscomb(path.css.prod + baseName + '.css'))
-        .pipe(gulp.dest(path.css.prod))
-        .pipe(notify('CSS Done!'))
-});
-
-gulp.task('js', () => {
-    return gulp.src(path.js.dev)
-        .pipe(plumber({
-            handleError: onError
+        //.pipe(sourcemaps.write())
+        .pipe(autoprefixer({
+            browsers: "> 1%"
         }))
-        .pipe(concat(baseName + '.js'))
-        .pipe(gulp.dest(path.js.prod))
-        .pipe(notify('JS Done!'))
-});
+        .pipe(cmq())
+        .pipe(concat(name + '.css'))
+        .pipe(gulp.dest(path.css.prod))
+        .pipe(notify('CSS: Dev... Done!'))
+}
 
-gulp.task('cssDev', () => {
-    return gulp.src(path.css.dev)
+function js() {
+    return gulp.src(path.js.dev)
         .pipe(plumber({
             handleError: onError
         }))
         .pipe(wait(500))
-        .pipe(sass
-            .sync({
-                outputStyle: 'compressed'
-            })
-            .on('error', sass.logError))
-        .pipe(concat(baseName + '.min.css'))
-        .pipe(gulp.dest(path.css.prod))
-        .pipe(postcss([
-            autoprefixer({
-                browsers: "> 1%"
-            })
-        ]))
-        .pipe(cmq())
-        .pipe(csscomb(path.css.prod + baseName + '.min.css'))
-        .pipe(gulp.dest(path.css.prod))
-        .pipe(notify('CSS Done!'))
-});
-
-gulp.task('jsDev', () => {
-    return gulp.src(path.js.dev)
-        .pipe(plumber({
-            handleError: onError
-        }))
-        .pipe(concat(baseName + '.min.js'))
+        .pipe(concat(jsFileName + '.js'))
         .pipe(gulp.dest(path.js.prod))
-        .pipe(notify('JS Done!'))
-});
+        .pipe(notify('JS: Dev... Done!'));
+}
 
-gulp.task('CSSProd', ['css'], () => {
-    return gulp.src(path.css.prod + baseName + '.css')
+function CSSProd() {
+    return gulp.src(path.css.prod +'/*.css')
         .pipe(minifycss())
         .pipe(rename({
-            basename: baseName,
             suffix: '.min'
         }))
         .pipe(gulp.dest(path.css.prod))
-});
+        .pipe(notify('CSS: Prod... done!'))
+}
 
-gulp.task('JSProd', () => {
-    return gulp.src(path.js.dev)
-        .pipe(plumber({
-            handleError: onError
-        }))
-        .pipe(concat(baseName + '.js'))
-        .pipe(gulp.dest(path.js.prod))
+function JSProd() {
+    return gulp.src(path.js.prod + jsFileName + '.js')
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest(path.js.prod))
+        .pipe(notify('JS: Prod... done!'))
+}
+
+gulp.task('default', gulp.parallel(css, js), done => {
+    done();
 });
 
-gulp.task('default', ['js', 'css']);
+gulp.task('prod', gulp.parallel(CSSProd,JSProd), done => {
+    done();
+});
 
-gulp.task('prod', ['CSSProd', 'JSProd']);
+gulp.task('watch', done => {
+    gulp.watch(path.js.dev, gulp.series(js));
+    gulp.watch(path.css.dev, gulp.series(css));
+    done();
+});
 
-gulp.task('watch', () => {
-    gulp.watch(path.js.dev, ['jsDev'])
-    gulp.watch(path.css.dev, ['cssDev'])
+gulp.task('test', done => {
+    console.log('=========================================================\n\n\tZajebiście Ci poszło. Umiesz Gulp\'a!\n\n=========================================================');
+    done();
 });

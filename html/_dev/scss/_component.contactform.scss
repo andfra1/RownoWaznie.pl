@@ -32,12 +32,12 @@
       }
     }
     input[type="submit"] {
-      display: inline-block;
+      display: block;
       margin: 0 auto;
       background-color: $c-basic;
       border: 1px solid transparent;
       width: 250px;
-      margin-left: 16px;
+      //margin-left: 16px;
       &:hover {
         border: 1px solid $c-gray;
         background-color: $c-white;
